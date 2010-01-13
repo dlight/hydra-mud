@@ -1,3 +1,20 @@
 #!/bin/bash
 
-cat
+msg() {
+	echo hydra-accept: "$*" >&2
+}
+
+msg ok. $$
+
+mkdir con/$$
+
+mkfifo con/$$/in
+mkfifo con/$$/out
+
+echo $(< con/$$/out)
+
+cat > con/$$/in
+
+wait
+
+rm -r con/$$

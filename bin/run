@@ -5,4 +5,11 @@ d=$(echo "$(dirname "$0")" | \
 
 export PATH=$d:$PATH
 
-tcpserver -v 0 4000 hydra-listen
+cd "$d/.."
+
+hydra-clean
+trap hydra-clean SIGINT
+
+tcpserver -v 0 4000 hydra-accept
+
+hydra-clean
