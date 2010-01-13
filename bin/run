@@ -1,0 +1,8 @@
+#!/bin/bash
+
+d=$(echo "$(dirname "$0")" | \
+	awk '{ "pwd" | getline a; gsub(/^\./, a); print }')
+
+export PATH=$d:$PATH
+
+tcpserver -v 0 4000 hydra-listen
