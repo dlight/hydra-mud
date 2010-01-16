@@ -1,0 +1,14 @@
+#!/bin/bash
+
+desc="$(echo "$1" | sed -r '/^\.\./d; /^\//d')"
+
+if test -z "$desc"; then
+	echo "display-desc: Error: Trying to display $1" >&2
+	exit 1
+fi
+
+cd descs
+
+test -d "$desc" && desc="$desc/default"
+
+cat "$desc"

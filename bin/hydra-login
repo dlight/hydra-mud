@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo Hello, $HYDRA_ID
-pwd
+display-desc .
 read i
-echo hELLO $i
-echo bye.
+printf "Hello, %s." $i
