@@ -1,1 +1,3 @@
 Dependencies: tcpserver (from ucspi-tcp)
+
+On ubuntu: sudo apt-get install ucspi-tcp
