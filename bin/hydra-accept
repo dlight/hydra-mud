@@ -1,20 +1,15 @@
 #!/bin/bash
 
-msg() {
+emsg() {
 	echo hydra-accept: "$*" >&2
 }
 
+export HYDRA_ID=$$
+
 msg ok. $$
 
-mkdir con/$$
+mkdir con/$HYDRA_ID
 
-mkfifo con/$$/in
-mkfifo con/$$/out
+hydra-login
 
-echo $(< con/$$/out)
-
-cat > con/$$/in
-
-wait
-
-rm -r con/$$
+mkdir con/$HYDRA_ID

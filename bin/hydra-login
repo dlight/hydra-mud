@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo Hello, $HYDRA_ID
+pwd
+read i
+echo hELLO $i
+echo bye.
