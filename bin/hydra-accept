@@ -6,10 +6,10 @@ emsg() {
 
 export HYDRA_ID=$$
 
-msg ok. $$
+emsg accepted $HYDRA_ID.
 
-mkdir con/$HYDRA_ID
+mkdir var/con/$HYDRA_ID
 
 hydra-login
 
-mkdir con/$HYDRA_ID
+rm -r var/con/$HYDRA_ID

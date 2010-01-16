@@ -1,5 +1,6 @@
 #!/bin/bash
 
+command=echo
 desc="$(echo "$1" | sed -r '/^\.\./d; /^\//d')"
 
 if test -z "$desc"; then
@@ -7,8 +8,13 @@ if test -z "$desc"; then
 	exit 1
 fi
 
-cd descs
+cd etc/descs
 
 test -d "$desc" && desc="$desc/default"
 
-cat "$desc"
+if test ! -f "$desc"; then
+	desc="$desc.literal"
+	command="echo -n"
+fi
+
+$command "$(< "$desc")"
