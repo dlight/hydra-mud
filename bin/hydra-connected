@@ -1,0 +1,9 @@
+#!/bin/bash
+
+display-desc prompt
+
+while true; do
+	read command
+	printf "You typed %s" $command
+	display-desc prompt
+done

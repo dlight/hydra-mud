@@ -17,4 +17,7 @@ if test ! -f "$desc"; then
 	command="echo -n"
 fi
 
-$command "$(< "$desc")"
+a="$(< "$desc")"
+a="${a//$'\n'/$'\r\n'}"
+
+$command "$a"

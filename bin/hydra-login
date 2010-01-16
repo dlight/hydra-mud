@@ -1,5 +1,13 @@
 #!/bin/bash
 
 display-desc .
-read i
-printf "Hello, %s." $i
+read HYDRA_USERNAME
+export HYDRA_USERNAME
+
+ln -s ../con/$HYDRA_ID var/user/$HYDRA_USERNAME
+
+display-desc login/accepted
+
+hydra-connected
+
+rm var/user/$HYDRA_USERNAME
