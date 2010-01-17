@@ -1,0 +1,10 @@
+#!/bin/bash
+
+comm="bin/command/$1"
+shift
+
+if test -x "$comm"; then
+	"$comm" "$@"
+else
+	display-desc sys/not-found/command "$1"
+fi

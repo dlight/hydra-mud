@@ -6,7 +6,7 @@ export HYDRA_USERNAME
 
 ln -s ../con/$HYDRA_ID var/user/$HYDRA_USERNAME
 
-display-desc login/accepted
+display-desc login/accepted $HYDRA_USERNAME
 
 hydra-connected
 

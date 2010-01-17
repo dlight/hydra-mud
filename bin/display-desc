@@ -3,6 +3,8 @@
 command=echo
 desc="$(echo "$1" | sed -r '/^\.\./d; /^\//d')"
 
+shift
+
 if test -z "$desc"; then
 	echo "display-desc: Error: Trying to display $1" >&2
 	exit 1
@@ -17,7 +19,6 @@ if test ! -f "$desc"; then
 	command="echo -n"
 fi
 
-a="$(< "$desc")"
-a="${a//$'\n'/$'\r\n'}"
+printf -v a "$(< "$desc")" "$@"
 
 $command "$a"
