@@ -3,8 +3,13 @@
 comm="bin/command/$1"
 shift
 
+pwd
+echo $comm
+
+[ -f $comm ] && echo ok
+
 if test -x "$comm"; then
 	"$comm" "$@"
 else
-	display-desc sys/not-found/command "$1"
+	display-desc sys/not-found/command
 fi

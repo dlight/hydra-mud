@@ -4,6 +4,6 @@ display-desc prompt
 
 while true; do
 	read command
-	command $command
+	do-command $command
 	display-desc prompt
 done

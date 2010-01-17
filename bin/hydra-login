@@ -8,6 +8,6 @@ ln -s ../con/$HYDRA_ID var/user/$HYDRA_USERNAME
 
 display-desc login/accepted $HYDRA_USERNAME
 
-hydra-connected
+hydra-playing
 
 rm var/user/$HYDRA_USERNAME
