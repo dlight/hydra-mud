@@ -21,4 +21,4 @@ fi
 
 printf -v a "$(< "$desc")" "$@"
 
-$command "$a"
+$command "$a" # "${a//$'\n'/$'\r\n'}"
